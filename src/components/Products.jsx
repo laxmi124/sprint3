@@ -1,5 +1,6 @@
-import React from 'react';
+import React,{useState} from 'react';
 import styled from 'styled-components';
+
 
 const productsData =[
   {
@@ -38,13 +39,13 @@ const Card = styled.div`
 
 function Products() {
 
-  fetch(`http://localhost:3001/producs`,{
-    method: 'POST',
-    body: JSON.stringify(productsData),
-    headers:{
-        "Content-Type": "application/json",
-    }
-  }).then((res)=>res.json()).then((res)=>console.log(res))
+  // fetch(`http://localhost:3001/producs`,{
+  //   method: 'POST',
+  //   body: JSON.stringify(productsData),
+  //   headers:{
+  //       "Content-Type": "application/json",
+  //   }
+  // }).then((res)=>res.json()).then((res)=>console.log(res))
 
   return (
     <Page>
