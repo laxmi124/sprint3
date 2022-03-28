@@ -19,27 +19,26 @@ function Register() {
         })
         console.log(formvalue);
     };
-    function submitForm(e){
-        e.preventDefault()
-        console.log(formvalue);
-        fetch(`https://masai-api-mocker.herokuapp.com/auth/register`,{
-            method: 'POST',
-            body: JSON.stringify(formvalue),
-            headers:{
-                "Content-Type": "application/json",
-            }
+    function submitForm(e) {
+      e.preventDefault();
+      console.log(formvalue);
+      fetch(`https://masai-api-mocker.herokuapp.com/auth/register`, {
+        method: "POST",
+        body: JSON.stringify(formvalue),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+        .then((res) => res.json())
+        .then((res) => {
+          console.log(res);
+          // setToken(res.token)
+          // res.token?handleAuth():logOut()
         })
-        .then((res)=>res.json())
-        .then((res)=>{
-            console.log(res)
-            // setToken(res.token)
-            // res.token?handleAuth():logOut()
-        })
-        .catch((err)=>console.log(err));
-    };;
+        .catch((err) => console.log(err));
+    }
+  
 
-
-   
     const {email,password,username,mobile} = formvalue;
   return (
       <div>
